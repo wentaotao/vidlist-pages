@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vidlist Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the Vidlist iPhone app. Vidlist has no accounts, developer servers, analytics, ads, or tracking.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --base: #0a0a0c;
+      --elevated: #141419;
+      --line: rgba(232, 179, 75, 0.35);
+      --text: #f5f5f7;
+      --muted: #98989f;
+      --gold: #e8b34b;
+      --focus: #f0d48a;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--base); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--base);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      transform: translateY(-120%);
+      background: var(--gold);
+      color: var(--base);
+      padding: 0.5rem 0.75rem;
+      z-index: 2;
+    }
+    .skip:focus { transform: none; }
+    .wrap {
+      width: min(42rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.25rem 0 calc(2.5rem + env(safe-area-inset-bottom));
+    }
+    .banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .wordmark {
+      margin: 0;
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .nav { display: flex; gap: 0.5rem; }
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding: 0.35rem 0.15rem;
+      color: var(--text);
+      text-underline-offset: 0.2em;
+    }
+    .nav a[aria-current="page"] { color: var(--gold); font-weight: 650; }
+    main { padding-top: 1.5rem; }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.85rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 2rem 0 0.5rem;
+      color: var(--gold);
+      font-size: 1.15rem;
+      line-height: 1.35;
+    }
+    p, li { color: var(--text); }
+    .lede, .meta { color: var(--muted); }
+    .meta { margin-top: 0; font-size: 0.95rem; }
+    ul, ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+    li + li { margin-top: 0.4rem; }
+    a { color: var(--gold); }
+    a:hover { color: var(--focus); }
+    a:focus-visible, .skip:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 32rem) {
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="wrap">
+    <header class="banner">
+      <p class="wordmark">Vidlist</p>
+      <nav class="nav" aria-label="Pages">
+        <a href="privacy-policy.html" aria-current="page">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective November 18, 2026</p>
+      <p class="lede">This policy describes the Vidlist iPhone app: playlists of videos from your photo library, played as audio. It matches the app as implemented for this page. A later version of the app can behave differently; if it does, this page will change with it.</p>
+
+      <h2>No account and no developer server</h2>
+      <p>Vidlist does not create an account and does not ask you to sign in. The app does not send your videos, playlists, or preferences to a server operated for Vidlist. There is no analytics service, no advertising, and no tracking of you across other companies’ apps or websites. The app does not request permission to track.</p>
+
+      <h2>What stays on your iPhone</h2>
+      <p>Vidlist keeps the following in the app’s own storage on the device:</p>
+      <ul>
+        <li>Playlists you create: the name, track order, any custom track title, and the photo library identifier of each video you add.</li>
+        <li>Playback progress for a playlist, including which track was playing and the position in it.</li>
+        <li>Preferences stored on the device, including repeat mode, the between-tracks choice, and the vinyl glow setting.</li>
+        <li>Small thumbnail images saved in the app’s cache so a cover can be shown again.</li>
+      </ul>
+      <p>Those copies are on the iPhone. Deleting a playlist, a track, or the app removes Vidlist’s copy of that information. Deleting the app does not delete the original videos in Photos.</p>
+
+      <h2>Photo library access</h2>
+      <p>Vidlist asks to access your photo library so it can list videos and play the ones you put in a playlist. iOS offers this as read/write access. That is the PhotoKit access level used to list videos that are already in the library. A separate add-only permission cannot list those videos.</p>
+      <p>If you choose Limited Access, Vidlist can see only the items you included in that selection. Other photos and videos stay unavailable to the app. You can change the selection later in the Settings app.</p>
+      <p>Vidlist does not modify, delete, or upload items in Photos. Taking a video out of a playlist, or deleting a playlist, changes Vidlist only.</p>
+
+      <h2>iCloud Photos</h2>
+      <p>Vidlist does not upload your videos, and the developer does not collect them. If a video or thumbnail you selected is stored in iCloud Photos and is not already on this iPhone, Apple Photos may download that media so it can be shown or played. That download stays with Apple Photos. Vidlist does not receive a copy.</p>
+      <p>A control that opens the Settings app uses a link on the device. It does not contact a Vidlist server.</p>
+
+      <h2>Retention</h2>
+      <p>Playlist data, preferences, and cached thumbnails remain on the device until you delete them in Vidlist or delete the app. There is no Vidlist account to close, and there is no developer-held copy of your playlists to ask for.</p>
+
+      <h2>Children</h2>
+      <p>Vidlist does not create accounts and is not set up to collect personal information for a developer. Playing videos still depends on the photo library permission on the device.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new text and effective date will be published on this page. Vidlist has no account through which to send a notice.</p>
+      <p>This page does not list a legal entity, postal address, or email address, because none is provided for Vidlist here. How to use the app is on the <a href="support.html">support page</a>.</p>
+    </main>
+    <footer>
+      <p>Vidlist privacy policy, effective November 18, 2026. <a href="support.html">Support</a></p>
+    </footer>
+  </div>
+</body>
+</html>

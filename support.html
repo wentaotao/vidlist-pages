@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vidlist Support</title>
+  <meta name="description" content="How to create a Vidlist playlist from Photos, photo permissions including Limited Access, and suggestions for background playback and iCloud videos.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --base: #0a0a0c;
+      --elevated: #141419;
+      --line: rgba(232, 179, 75, 0.35);
+      --text: #f5f5f7;
+      --muted: #98989f;
+      --gold: #e8b34b;
+      --focus: #f0d48a;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--base); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--base);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      transform: translateY(-120%);
+      background: var(--gold);
+      color: var(--base);
+      padding: 0.5rem 0.75rem;
+      z-index: 2;
+    }
+    .skip:focus { transform: none; }
+    .wrap {
+      width: min(42rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.25rem 0 calc(2.5rem + env(safe-area-inset-bottom));
+    }
+    .banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .wordmark {
+      margin: 0;
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .nav { display: flex; gap: 0.5rem; }
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding: 0.35rem 0.15rem;
+      color: var(--text);
+      text-underline-offset: 0.2em;
+    }
+    .nav a[aria-current="page"] { color: var(--gold); font-weight: 650; }
+    main { padding-top: 1.5rem; }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.85rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 2rem 0 0.5rem;
+      color: var(--gold);
+      font-size: 1.15rem;
+      line-height: 1.35;
+    }
+    p, li { color: var(--text); }
+    .lede, .meta { color: var(--muted); }
+    .meta { margin-top: 0; font-size: 0.95rem; }
+    ul, ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+    li + li { margin-top: 0.4rem; }
+    a { color: var(--gold); }
+    a:hover { color: var(--focus); }
+    a:focus-visible, .skip:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+    .note {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      background: var(--elevated);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 32rem) {
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="wrap">
+    <header class="banner">
+      <p class="wordmark">Vidlist</p>
+      <nav class="nav" aria-label="Pages">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="support.html" aria-current="page">Support</a>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>Support</h1>
+      <p class="lede">Vidlist turns videos in your photo library into playlists you can listen to. The steps below describe how this version of the app is built. They are suggestions, not a guarantee that every iPhone, iOS release, or video will behave the same way.</p>
+
+      <h2>Create a playlist from Photos</h2>
+      <ol>
+        <li>Open Vidlist and go through the short introduction.</li>
+        <li>When iOS asks, allow photo library access. You can also continue without allowing it; the video list will ask again.</li>
+        <li>From Your Playlists, use the add button. If you have no playlists yet, use Create a Playlist.</li>
+        <li>Select one or more videos. The list contains videos only, sorted newest or oldest first.</li>
+        <li>Add the selection, type a playlist name, and create the playlist.</li>
+        <li>Open the playlist and tap Play.</li>
+      </ol>
+      <p>From a playlist you can add more videos, reorder tracks, rename a track, or remove a track. Removing a track or deleting a playlist does not delete the video in Photos.</p>
+
+      <h2>Photo permission, including Limited Access</h2>
+      <p>Vidlist needs permission to read videos that are already in Photos. iOS uses its read/write photo access for that. The app does not edit or delete your Photos library.</p>
+      <ul>
+        <li><strong>Full Access.</strong> Vidlist can list the videos in the library.</li>
+        <li><strong>Limited Access.</strong> Vidlist can list only the items you selected for it. A video you did not include will not appear. To add one, update Vidlist’s photo selection in the Settings app. The path is under the app’s Photos permission; the exact labels depend on your iOS version.</li>
+        <li><strong>None.</strong> The video list says access is needed and can open Settings. Until access is allowed, Vidlist cannot show your videos.</li>
+      </ul>
+      <p>If the library has no videos, or Limited Access includes none, the picker says that no videos were found in the photo library.</p>
+
+      <h2>Background and lock screen</h2>
+      <p>Start playback in Vidlist before you lock the iPhone or leave the app. The app is set up so audio can keep playing, and so the lock screen can show the track title, the playlist name, and a picture from the video, with play, pause, previous, next, and scrub.</p>
+      <p>Repeat, and speed at 0.75×, 1×, 1.25×, 1.5×, and 2×, are on the Now Playing screen inside the app. They are not separate buttons on the lock screen. Previous and next move between tracks. If the current track has been playing for more than a few seconds, previous returns to the start of that track.</p>
+      <div class="note">
+        <p>If sound stops, try the following. None of these is a guaranteed fix:</p>
+        <ul>
+          <li>Check that playback was started and is not paused.</li>
+          <li>Check the audio output in Control Center, including Bluetooth headphones.</li>
+          <li>After a phone call or another interruption, press play again. Vidlist pauses when an interruption starts and does not resume on its own.</li>
+          <li>Close other apps that may have taken over audio.</li>
+          <li>If the video is only in iCloud, the download may still be in progress or may have failed. See the next section.</li>
+        </ul>
+      </div>
+
+      <h2>iCloud Photos and connectivity</h2>
+      <p>A video can live in iCloud Photos and not on the iPhone, especially when storage is optimized. Vidlist can ask PhotoKit to download the video you selected, and the thumbnail for it. That download needs a network connection and access to your iCloud Photos library. Vidlist does not upload the video, but this case is not offline playback.</p>
+      <p>If a selected video will not play, try opening it in the Photos app on the same iPhone so it can finish downloading, and confirm the iPhone is online. With Limited Access, also confirm that the video is part of Vidlist’s selection.</p>
+
+      <h2>Between Tracks</h2>
+      <p>Settings includes Between Tracks, with Seamless and 2s Pause. In this version the choice is saved on the device and does not change the gap between tracks.</p>
+
+      <h2>No public support channel</h2>
+      <p>This page does not offer a support email, a contact form, or a public issue tracker. There is no public address to write to from here. Use the steps on this page, and read the <a href="privacy-policy.html">privacy policy</a> for what the app stores and what it does not send.</p>
+      <p>Vidlist is built for iPhone on iOS 18 or later.</p>
+    </main>
+    <footer>
+      <p>Vidlist support. <a href="privacy-policy.html">Privacy policy</a>, effective November 18, 2026.</p>
+    </footer>
+  </div>
+</body>
+</html>
